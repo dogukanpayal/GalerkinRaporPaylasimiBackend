@@ -17,8 +17,8 @@ export async function register(req, res) {
     if (existing)
       return res.status(400).json({ message: 'Email already registered' });
     
-    // Default role for all new registrations is 'employee'
-    const role = 'employee';
+    // Default role for all new registrations is 'Calisan'
+    const role = 'Calisan';
 
     const passwordHash = await bcrypt.hash(password, 10);
     const user = await User.create({ email, passwordHash, role, firstName, lastName });

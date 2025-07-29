@@ -30,7 +30,7 @@ router.post('/', authenticateJWT, upload.single('file'), uploadReport);
 router.get('/:id', authenticateJWT, getReportById);
 
 // Update a report's status (manager only)
-router.put('/:id/status', authenticateJWT, requireRole('manager'), updateReportStatus);
+router.put('/:id/status', authenticateJWT, requireRole('Yonetici'), updateReportStatus);
 
 // Update a report's notes
 router.put('/:id', authenticateJWT, updateReport);
